@@ -13,6 +13,10 @@ app.use(cors({
 }));
 
 app.use(express.json());
+// Add this new route for debugging
+app.get('/api', (req, res) => {
+  res.send('The backend is up and running!');
+});
 
 console.log('Starting Notes API Server...');
 
