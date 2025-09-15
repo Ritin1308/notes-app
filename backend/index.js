@@ -57,7 +57,7 @@ const requireAdmin = (req, res, next) => {
   next();
 };
 
-// Routes
+// Routes - Note: Vercel will handle the /api prefix, so we don't add it here
 app.get('/health', (req, res) => {
   console.log('Health check requested');
   res.json({ status: 'ok' });
