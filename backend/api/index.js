@@ -14,8 +14,6 @@ app.use(cors({
 
 app.use(express.json());
 
-console.log('Starting Notes API Server...');
-
 // In-memory data
 const users = [
   { id: 1, email: 'admin@acme.test', role: 'Admin', tenantSlug: 'acme' },
@@ -57,7 +55,7 @@ const requireAdmin = (req, res, next) => {
   next();
 };
 
-// Routes - Note: Vercel will handle the /api prefix, so we don't add it here
+// Routes
 app.get('/health', (req, res) => {
   console.log('Health check requested');
   res.json({ status: 'ok' });
@@ -208,4 +206,5 @@ app.delete('/notes/:id', authenticateToken, (req, res) => {
   res.json({ message: 'Note deleted successfully' });
 });
 
+// Export the Express app for Vercel
 module.exports = app;
