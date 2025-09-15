@@ -208,7 +208,7 @@ app.delete('/notes/:id', authenticateToken, (req, res) => {
   res.json({ message: 'Note deleted successfully' });
 });
 
-const port = process.env.PORT || 3000;
+/*const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`✅ Server running on http://localhost:${port}`);
   console.log('Available endpoints:');
@@ -217,6 +217,6 @@ app.listen(port, () => {
   console.log('- GET  /notes');
   console.log('- POST /notes');
   console.log('Ready for connections!');
-});
+}); */
 
 module.exports = app;
